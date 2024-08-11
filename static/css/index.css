@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    background-color: #5aa63b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .trip-planner {
+    display: flex;
+    align-items: center;
+  }
+  
+  .trip-planner label {
+    margin-right: 5px;
+  }
+  
+  .trip-planner input {
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .trip-planner button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .trip-planner button:hover {
+    background-color: #0056b3;
+  }
+  
+  .auth {
+    display: flex;
+    align-items: center;
+  }
+  
+  .auth span {
+    margin-right: 5px;
+  }
+  
+  .auth a {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  .container {
+    display: flex;
+    flex: 1;
+  }
+  
+  #sidebar {
+    width: 300px;
+    height: calc(100vh - 50px);
+    background-color: #f8f9fa;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+  }
+  
+  #sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  #show-all-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  #sidebar button:hover {
+    background-color: #0056b3;
+  }
+  
+  .route {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
+  }
+  
+  
+  .map {
+    flex: 1;
+    height: calc(100vh - 60px); /* Subtract header height */
+  }
+  
+  .footer {
+    background-color: #5aa63b;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+.route {
+    padding: 10px;
+    cursor: pointer;
+  }
+  .route.active {
+    background: #e8e8e8;
+  }
+  .route-info {
+    display: none;
+  }
+  .route-info.active {
+    display: block;
+  }
+
+  .route-card .route-rating {
+    margin-top: 10px;
+}
+
+.rating-popup {
+    text-align: center;
+    padding: 10px;
+}
+
+.rating-popup h4 {
+    margin-bottom: 10px;
+}
+
+.rating-popup .rating-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rating-popup .rating-btn[data-rating="easy"] {
+    background-color: #00FF00;
+    color: white;
+}
+
+.rating-popup .rating-btn[data-rating="moderate"] {
+    background-color: #FFA500;
+    color: white;
+}
+
+.rating-popup .rating-btn[data-rating="difficult"] {
+    background-color: #FF0000;
+    color: white;
+}
+
+.rating-popup .rating-btn:hover {
+    opacity: 0.8;
+}
+  /* #show-all-btn {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: #007bff;
+    color: #fff;
+    border: none;
+  }
+   */

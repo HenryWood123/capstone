@@ -1,0 +1,6 @@
+Flask==2.0.0
+werkzeug==2.0.0
+firebase-admin
+gunicorn
+flask-cors
+flask_login

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/set_preferences.css') }}">
+    <title>Accessibility Preferences</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/ghanaride-high-resolution-logo-black-transparent.png') }}" alt="GhanaRide Logo">        </div>
+    </div>
+    <div class="container">
+        <h2>Accessibility Preferences</h2>
+        <form>
+            <div class="form-group">
+                <label for="disability-type">Type of Disability</label>
+                <select id="disability-type" name="disability-type">
+                    <option value="physical">Physical</option>
+                    <option value="visual">Visual</option>
+                    <option value="hearing">Hearing</option>
+                    <option value="cognitive">Cognitive</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="disability-severity">Severity of Disability</label>
+                <select id="disability-severity" name="disability-severity">
+                    <option value="mild">Mild</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="severe">Severe</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="assistive-devices">Assistive Devices Used</label>
+                <input type="text" id="assistive-devices" name="assistive-devices" placeholder="E.g., Wheelchair, Hearing Aid">
+            </div>
+            <div class="form-group">
+                <label for="accessibility-needs">Accessibility Needs</label>
+                <textarea id="accessibility-needs" name="accessibility-needs" rows="4" cols="50" placeholder="Describe any specific adjustments or accommodations you require"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="communication-preference">Preferred Method of Communication</label>
+                <select id="communication-preference" name="communication-preference">
+                    <option value="text">Text</option>
+                    <option value="sign-language">Sign Language</option>
+                    <option value="braille">Braille</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mobility-aids">Mobility Aids</label>
+                <input type="text" id="mobility-aids" name="mobility-aids" placeholder="E.g., Crutches, Walker">
+            </div>
+            <div class="form-group">
+                <label for="visual-impairment">Level of Visual Impairment</label>
+                <select id="visual-impairment" name="visual-impairment">
+                    <option value="low-vision">Low Vision</option>
+                    <option value="legally-blind">Legally Blind</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="corrective-devices">Use of Corrective Devices</label>
+                <input type="text" id="corrective-devices" name="corrective-devices" placeholder="E.g., Glasses, Contact Lenses">
+            </div>
+            <div class="form-group">
+                <label for="hearing-impairment">Level of Hearing Impairment</label>
+                <select id="hearing-impairment" name="hearing-impairment">
+                    <option value="partial">Partial</option>
+                    <option value="total">Total</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="hearing-devices">Use of Hearing Devices</label>
+                <input type="text" id="hearing-devices" name="hearing-devices" placeholder="E.g., Hearing Aids, Cochlear Implants">
+            </div>
+            <div class="form-group">
+                <label for="cognitive-impairment">Type of Cognitive Impairment</label>
+                <input type="text" id="cognitive-impairment" name="cognitive-impairment" placeholder="E.g., Dyslexia, ADHD">
+            </div>
+            <div class="form-group">
+                <label for="support-needed">Specific Support Needed</label>
+                <textarea id="support-needed" name="support-needed" rows="4" cols="50" placeholder="Describe any specific support you need"></textarea>
+            </div>
+            <button type="submit" class="btn">Save Preferences</button>
+        </form>
+
+    </div>
+</body>
+</html>
+

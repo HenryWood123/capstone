@@ -1,0 +1,11 @@
+runtime: python38
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /.*
+  script: auto
+
+env_variables:
+  GOOGLE_APPLICATION_CREDENTIALS: "ghanaride-2de0c-firebase-adminsdk-8xgi9-1b2073e567.json"

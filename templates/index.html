@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Routing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2DUnMvIUGAEsx9pmCB2plJE3-04IrMVw&libraries=places&callback=initMap" async defer></script>   
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+  <header class="header">
+    <img src="{{ url_for('static', filename='images/ghanaride-high-resolution-logo-black-transparent.png') }}" alt="GhanaRide Logo" class="logo">
+    <div class="trip-planner">
+      <label for="start">Start From:</label>
+      <input type="text" id="start" placeholder="Enter start location">
+      <label for="end">Destination:</label>
+      <input type="text" id="end" placeholder="Enter destination">
+      <label for="date">Date:</label>
+      <input type="date" id="date">
+      <label for="time">Time:</label>
+      <input type="time" id="time">
+      <button id="plan-trip">Plan Trip</button>
+    </div>
+    <div class="auth">
+      {% if not current_user.is_authenticated %}
+        <span>Don't have an account?</span>
+        <a href="/signuppage">Sign Up</a>
+        <a href="/loginpage">Log In</a>
+      {% else %}
+        <span>Welcome, {{ current_user.email }}!</span>
+        <a href="/profile">Profile</a>
+        <a href="/logout">Log Out</a>
+      {% endif %}
+    </div>
+  </header>
+  <div class="container">
+    <aside id="sidebar" class="sidebar">
+      <h3>Routes</h3>
+      <div id="routes-list"></div>
+      <button id="show-all-btn">Show All Routes</button>
+      <a href="/routepage">
+        <button id="show-all-btn">View All Routes</button>
+      </a>
+    </aside>
+    <main id="map" class="map"></main>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2024 Accessible Routing</p>
+  </footer>
+</body>
+</html>

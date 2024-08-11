@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Sign Up</title>
+    <script>
+        async function registerUser(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            const response = await fetch('http://127.0.0.1:5000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                    name: name,
+                    phone: phone,
+                }),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                document.getElementById('message').innerText = 'User registered successfully!';
+                setTimeout(() => {
+                    window.location.href = '/set_preferences';  
+                }, 2000);  
+            } else {
+                alert('Failed to register user: ' + result.error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/ghanaride-high-resolution-logo-black-transparent.png') }}" alt="GhanaRide Logo">
+        </div>
+        <div class="sign-up">Already have an account? <a href="/login">Log In</a></div>
+    </div>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <p>Create an account to start planning your exciting trips!</p>
+        <form onsubmit="registerUser(event)">
+            <div class="form-group">
+                <label for="name">Full Name*</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number*</label>
+                <input type="phone" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password*</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot your password?</a>
+        </div>
+        <div class="footer">© 2022 Relume</div>
+    </div>
+
+    <p id="message"></p>
+</body>
+</html>
