@@ -1,12 +1,6 @@
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDPuImsiUJ4wIQFU84GNqn7kt_MFGGRDW8",
-    authDomain: "ghanaride-2de0c.firebaseapp.com",
-    projectId: "ghanaride-2de0c",
-    storageBucket: "ghanaride-2de0c.appspot.com",
-    messagingSenderId: "339091042368",
-    appId: "1:339091042368:web:ce277932b74202a771afa5",
-    measurementId: "G-FTW2SE5TEW"
+    //replace with your own firebase configurations
   };
   
   
