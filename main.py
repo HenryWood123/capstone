@@ -8,7 +8,7 @@ from flask_cors import CORS as Cors
 app = Flask(__name__)
 Cors(app)
 
-cred = credentials.Certificate("ghanaride-2de0c-firebase-adminsdk-8xgi9-1b2073e567.json")
+cred = credentials.Certificate("ghanaride-2de0c-firebase-adminsdk-8xgi9-1b2073e567.json") //replace with your own credentials file
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
