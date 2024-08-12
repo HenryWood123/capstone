@@ -8,4 +8,4 @@ handlers:
   script: auto
 
 env_variables:
-  GOOGLE_APPLICATION_CREDENTIALS: "ghanaride-2de0c-firebase-adminsdk-8xgi9-1b2073e567.json"
+  GOOGLE_APPLICATION_CREDENTIALS: "ghanaride-2de0c-firebase-adminsdk-8xgi9-1b2073e567.json" //replace with your own credentials file
